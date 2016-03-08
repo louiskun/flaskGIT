@@ -7,8 +7,6 @@ app=Flask(__name__)
 def v_index():
 	return '''
 		<form action="/login" method="POST">
-			<input type="text" name="system" placeholder="system">
-			</br>
 			<input type="text" name="uid" placeholder="输入你的用户ID">
 			<input type="password" name="pwd" placeholder="输入你的密码">
 			<input type="submit" value="login">
@@ -17,10 +15,9 @@ def v_index():
 
 @app.route('/login',methods=['POST'])
 def v_login():
-	sys= request.form['system']
 	uid= request.form['uid']
 	pwd= request.form['pwd']
-	if sys=='CRM' and uid=='admin' and pwd=='123':
+	if uid=='admin' and pwd=='123':
 		return 'Authorized successfully'
 	else:
 		return 'Un-Authorized'
