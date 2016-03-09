@@ -8,14 +8,14 @@ app=Flask(__name__)
 def v_index():
 	return '''
 		<ul>
-		    <li><a href="/admin?token=111">允许访问</a></li>
+		    <li><a href="/admin?token=78787878">允许访问</a></li>
 		    <li><a href="/admin">请求被禁止</a></li>
 		</ul>
 	'''
 
 @app.route('/admin')
 def v_admin():
-	if 'token' in request.args:
+	if request.args['token'] == '78787878':
 		return 'you are a good boy!'
 	else:
 		abort(401)
