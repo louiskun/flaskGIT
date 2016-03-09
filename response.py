@@ -10,8 +10,8 @@ def v_index():
 
 @app.route('/ping')
 def v_ping():
-	return 'pong'
-
+	return 'pong',200,{'x-tag':'sth.magic'}
+	
 if __name__ == '__main__':
 	app.run()
 
